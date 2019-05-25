@@ -8,7 +8,9 @@
             <li
             *ngFor="let item of items"
             class="list-group-item"
-            >{{ item }} <span class="btn-remove" (click)="removeItem(item)"><i class="fas fa-times"></i></span></li>
+            >
+            <input type="checkbox">
+            {{ item }} <span class="btn-remove" (click)="removeItem(item)"><i class="fas fa-times"></i></span></li>
         </ul>
     </div> 
 </div>
