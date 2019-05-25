@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 
 })
 export class TodoComponent {
-  
+
   items: any[] = [
     'task 1',
     'task 2',

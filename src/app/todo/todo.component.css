@@ -1,1 +1,25 @@
-null
+.list-group-item {
+  list-style-type: none;
+  height: 40px;
+}
+
+.list-group-item:first-child {
+  margin-top: 20px;
+}
+
+.list-group-item:hover {
+  background-color: #F5F5F5;
+}
+
+.list-group-item:hover .btn-remove {
+  visibility: visible;
+}
+
+.btn-remove {
+  visibility: hidden;
+}
+
+.btn-remove:hover {
+  color: red;
+  cursor: pointer;
+}
