@@ -1,0 +1,15 @@
+<div>
+    <h1>Todos</h1>
+      
+    <input #itemInput
+        (keyup.enter)="addItem(itemInput)" placeholder="type a new task here...">
+    <div *ngIf="items" class="list-group" >
+        <ul>
+            <li
+            *ngFor="let item of items"
+            class="list-group-item"
+            >{{ item }} <span class="btn-remove" (click)="removeItem(item)"><i class="fas fa-times"></i></span></li>
+        </ul>
+    </div> 
+</div>
+    
