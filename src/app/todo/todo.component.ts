@@ -60,5 +60,13 @@ export class TodoComponent {
      return ''+ day+'/'+(month+1)+'/'+year+' '+hour+':'+minutes+':'+seconds;
    }
 
+   deleteAllDone() {
+    for (let i=0; i<=this.items.length; i++) {
+      if (this.items[i].isChecked === true) {
+          this.removeItem(this.items[i]);
+          this.items.splice(i,2);
+      }
+    }
+   }
 }
 
