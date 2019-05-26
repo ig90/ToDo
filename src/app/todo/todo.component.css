@@ -1,6 +1,5 @@
 .list-group-item {
   list-style-type: none;
-  height: 40px;
 }
 
 .list-group-item:first-child {
@@ -22,4 +21,13 @@
 .btn-remove:hover {
   color: red;
   cursor: pointer;
+}
+
+.checked {
+  text-decoration: line-through;
+}
+
+.date {
+  font-size: 0.8em;
+  color: #BDBDBD;
 }
