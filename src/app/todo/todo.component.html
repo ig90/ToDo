@@ -1,16 +1,24 @@
 <div>
-    <h1>Todos</h1>
-      
-    <input #itemInput
-        (keyup.enter)="addItem(itemInput)" placeholder="type a new task here...">
-    <div *ngIf="items" class="list-group" >
+    <h1>ToDo</h1>
+    <input #itemTitle
+        (keyup.enter)="addItem(itemTitle)"
+        placeholder="type a new task here...">
+    <div *ngIf="items" class="list-group">
         <ul>
             <li
-            *ngFor="let item of items"
-            class="list-group-item"
-            >
-            <input type="checkbox">
-            {{ item }} <span class="btn-remove" (click)="removeItem(item)"><i class="fas fa-times"></i></span></li>
+                *ngFor="let item of items"
+                class="list-group-item"
+                [ngClass]="{'checked': item.isChecked}">
+            <input type="checkbox"
+                aria-label="Checkbox for crossout task"
+                (change)="crossOut(item)">
+            {{ item.title }}
+            <span class="date">{{ item.date }}</span>
+            <span class="btn-remove"
+                (click)="removeItem(item)"
+                aria-label="delete task">
+                <i class="fas fa-times"></i></span>
+            </li>
         </ul>
     </div> 
 </div>
