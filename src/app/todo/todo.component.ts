@@ -61,12 +61,14 @@ export class TodoComponent {
    }
 
    deleteAllDone() {
-    for (let i=0; i<=this.items.length; i++) {
-      if (this.items[i].isChecked === true) {
-          this.removeItem(this.items[i]);
-          this.items.splice(i,2);
+      let i = 0;
+      while (i <= this.items.length) {
+        if (this.items[i].isChecked === true) {
+          this.removeItem(i);
+          i = i - 1;
+        }
+        i++;
       }
-    }
    }
 }
 
