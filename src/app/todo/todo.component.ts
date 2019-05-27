@@ -1,9 +1,14 @@
 import { Component } from '@angular/core';
+import { todoAnimation, todosAnimation } from '../animations';
 
 @Component({
   selector: 'todo',
   templateUrl: './todo.component.html',
   styleUrls: ['./todo.component.sass'],
+  animations: [
+    todoAnimation,
+    todosAnimation
+  ]
 
 })
 
@@ -18,6 +23,8 @@ export class TodoComponent {
     {title: 'task6', isChecked: false, date: this.getDate()},
 
   ];
+
+  isCrossedOut = false;
 
   addItem(input: HTMLInputElement) {
     const item = {
@@ -45,6 +52,8 @@ export class TodoComponent {
       this.removeItem(item);
     }
     item.isChecked = !item.isChecked;
+
+    this.isCrossedOut = true;
   }
 
   getDate() {
@@ -62,13 +71,15 @@ export class TodoComponent {
 
    deleteAllDone() {
       let i = 0;
-      while (i <= this.items.length) {
+      while (i < this.items.length) {
         if (this.items[i].isChecked === true) {
           this.removeItem(i);
           i = i - 1;
         }
         i++;
       }
+      this.isCrossedOut = false;
    }
+
 }
 
