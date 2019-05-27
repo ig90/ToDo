@@ -1,5 +1,18 @@
+.todo-title {
+  margin: 20px;
+  text-align: center;
+}
+
+.todo-list {
+  margin: 0;
+  padding: 0;
+}
+
 .list-group-item {
   list-style-type: none;
+  position: relative;
+  word-wrap: break-word;
+  font-size: 1.2em;
 }
 
 .list-group-item:first-child {
@@ -7,7 +20,7 @@
 }
 
 .list-group-item:hover {
-  background-color: #F5F5F5;
+  background-color: #FAFAFA;
 }
 
 .list-group-item:hover .btn-remove {
@@ -16,18 +29,27 @@
 
 .btn-remove {
   visibility: hidden;
+  font-size: 1.2em;
+  position: absolute;
+  right: 20px;
+  line-height: 1.2em;
 }
 
 .btn-remove:hover {
-  color: red;
+  color: #f44336;
   cursor: pointer;
 }
 
 .checked {
   text-decoration: line-through;
+  background-color: #EEEEEE;
 }
 
 .date {
   font-size: 0.8em;
-  color: #BDBDBD;
+  color: #616161;
+}
+
+.btn-remove-all {
+  margin: 40px 0;
 }
